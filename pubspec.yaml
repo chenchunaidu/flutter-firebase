@@ -38,6 +38,7 @@ dependencies:
   form_validator: ^2.1.1
   date_time_picker: ^2.1.0
   get_storage: ^2.1.1
+  firebase_core: ^2.8.0
 
 dev_dependencies:
   flutter_test:

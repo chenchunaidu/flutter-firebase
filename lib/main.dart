@@ -10,6 +10,8 @@ import 'package:flutter_firebase/theme/index.dart';
 import 'package:get/get.dart';
 import 'package:flutter_firebase/helpers/auth.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 import 'helpers/translations.dart';
 
@@ -19,6 +21,9 @@ void initialize() {
 }
 
 void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   initialize();
   await GetStorage.init();
   runApp(MyApp());

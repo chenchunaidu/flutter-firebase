@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/components/common/hstack.dart';
-import 'package:flutter_boilerplate/components/translate/translate-button.dart';
+import 'package:flutter_firebase/components/common/hstack.dart';
+import 'package:flutter_firebase/components/translate/translate-button.dart';
 
 import '../../theme/inset.dart';
 import '../common/vstack.dart';

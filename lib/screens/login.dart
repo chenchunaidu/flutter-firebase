@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/components/auth-info.dart';
-import 'package:flutter_boilerplate/components/login-form.dart';
-import 'package:flutter_boilerplate/components/common/vstack.dart';
-import 'package:flutter_boilerplate/components/translate/translate-buttons.dart';
-import 'package:flutter_boilerplate/theme/inset.dart';
+import 'package:flutter_firebase/components/auth-info.dart';
+import 'package:flutter_firebase/components/login-form.dart';
+import 'package:flutter_firebase/components/common/vstack.dart';
+import 'package:flutter_firebase/components/translate/translate-buttons.dart';
+import 'package:flutter_firebase/theme/inset.dart';
 import 'package:get/get.dart';
 
 class Login extends StatelessWidget {

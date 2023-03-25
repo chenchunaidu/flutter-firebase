@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/components/common/vstack.dart';
-import 'package:flutter_boilerplate/theme/inset.dart';
+import 'package:flutter_firebase/components/common/vstack.dart';
+import 'package:flutter_firebase/theme/inset.dart';
 
 import '../theme/font.dart';
 import 'common/form/custom-form-field.dart';

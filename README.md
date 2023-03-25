@@ -1,6 +1,6 @@
-# Flutter boilerplate
+# Flutter Firebase boilerplate
 
-Flutter boilerplate is a base setup that can be used for building all new flutter applications.
+Flutter Firebase boilerplate is a base setup that can be used for building all new flutter with firebase applications.
 
 ## Folder Structure
 

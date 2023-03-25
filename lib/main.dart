@@ -21,10 +21,10 @@ void initialize() {
 }
 
 void main() async {
+  initialize();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  initialize();
   await GetStorage.init();
   runApp(MyApp());
 }

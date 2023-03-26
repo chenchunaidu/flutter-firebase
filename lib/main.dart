@@ -83,7 +83,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/login',
       getPages: getPageWrapper([
         PageWrapper(path: '/login', child: Login(), navbar: false),
-        PageWrapper(path: '/home', child: const Home()),
+        PageWrapper(path: '/home', child: const HomeScreen()),
         PageWrapper(path: '/content', child: const Content()),
         PageWrapper(path: '/calendar', child: const Calendar()),
         PageWrapper(path: '/profile', child: const Account()),
@@ -93,7 +93,7 @@ class _MyAppState extends State<MyApp> {
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       darkTheme: darkTheme,
-      home: Home(),
+      home: HomeScreen(),
     );
   }
 }

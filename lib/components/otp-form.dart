@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/components/common/form/index.dart';
 import 'package:flutter_firebase/theme/font.dart';
@@ -23,17 +24,16 @@ var otpForm = [
 class OTPForm extends StatelessWidget {
   OTPForm({Key? key}) : super(key: key);
 
-  final login = Get.find<AuthController>().login;
+  final login = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return CustomForm(
       fields: otpForm,
-      onSubmit: (value) {
-        print(value);
-        if (value["otp"] == "12345") {
-          login();
-          Get.toNamed('/calendar');
-        }
+      onSubmit: (value) async {
+        FirebaseAuth auth = FirebaseAuth.instance;
+        PhoneAuthCredential credential = PhoneAuthProvider.credential(
+            verificationId: login.verificationId, smsCode: value["otp"]);
+        await auth.signInWithCredential(credential);
       },
       submitButtonChild: const Text(
         "Login",

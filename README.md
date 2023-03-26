@@ -119,7 +119,7 @@ class OTPForm extends StatelessWidget {
     return CustomForm(
       fields: otpForm,
       onSubmit: (value) {
-        print(value); // All form field values in the form of Map<String, dynamic>
+        // handle firebase sign in
         if (value["otp"] == "12345") {
           login();
           Get.toNamed('/home');

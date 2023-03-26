@@ -8,6 +8,7 @@ class Messages extends Translations {
           'Sign in to Flutter boilerplate to check all features':
               "Sign in to Flutter boilerplate to check all features",
           "Email": "Email",
+          "Phone No.": "Phone No.",
           "Send OTP": "Send OTP"
         },
         'hi_IN': {

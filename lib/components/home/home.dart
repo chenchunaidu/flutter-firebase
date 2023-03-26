@@ -24,7 +24,8 @@ class Home extends StatelessWidget {
                 width: double.infinity,
                 padding: EdgeInsets.all(Insets.md),
                 child: VStack(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: Insets.lg,
                     children: [
                       BorderedImage(
                         url: data.images[0],
@@ -32,12 +33,21 @@ class Home extends StatelessWidget {
                         width: double.infinity,
                         fit: BoxFit.cover,
                       ),
-                      Text(
-                        data.name,
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w600, fontSize: 16),
-                      ),
-                      Text("Rs. ${data.price}/-")
+                      VStack(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              data.name,
+                              style: const TextStyle(fontSize: 16),
+                            ),
+                            const Text(
+                              "30 Mar - 10 Apr",
+                              style: TextStyle(color: Colors.white70),
+                            ),
+                            Text(
+                              "Rs. ${data.price} night",
+                            )
+                          ])
                     ]));
           }).toList();
           return VStack(children: hotels);

@@ -34,6 +34,7 @@ class Home extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                       VStack(
+                          spacing: Insets.sm,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(

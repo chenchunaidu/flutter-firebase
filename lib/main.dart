@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/layout/get-page-wrapper.dart';
 import 'package:flutter_firebase/screens/account.dart';
@@ -25,13 +28,42 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   await GetStorage.init();
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   GetStorage storage = GetStorage();
+  final authController = Get.find<AuthController>();
+  late StreamSubscription<User?> firebaseAuthSubscription;
+
+  @override
+  void initState() {
+    firebaseAuthSubscription =
+        FirebaseAuth.instance.authStateChanges().listen((user) {
+      if (user != null) {
+        authController.login(user);
+      } else {
+        authController.logout();
+      }
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    firebaseAuthSubscription.cancel();
+    super.dispose();
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase/layout/get-page-wrapper.dart';
 import 'package:flutter_firebase/screens/account.dart';
@@ -28,6 +30,13 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // handles firebase crash reporting
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
   // await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   await GetStorage.init();
   runApp(MyApp());

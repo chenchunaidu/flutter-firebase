@@ -2,12 +2,23 @@
 
 Flutter Firebase boilerplate is a base setup that can be used for building all new flutter with firebase applications.
 
-### Setup
+## Setup
 
-Follow steps from this link https://firebase.google.com/docs/flutter/setup?platform=ios to setup firebase in your local
+1. Goto https://console.firebase.google.com and create new project
+2. Enable Authentication and Firebase database in your project and enable phone or email authentication what you are going to use in your application
+3. Follow steps from this link https://firebase.google.com/docs/flutter/setup?platform=ios to setup firebase in your local
 
-2. Run following command to configure your firebase application
+4. Run following command to configure your firebase application
    `flutterfire configure`
+5. Goto project settings of your project and add your keystore sha1 and sha256 certificate.
+6. Use following command to get keystore
+
+```
+ keytool -list -v \
+-alias androiddebugkey -keystore ~/.android/debug.keystore
+```
+
+7. Default password for keystore will be `android`
 
 ## Folder Structure
 

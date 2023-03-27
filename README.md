@@ -2,6 +2,13 @@
 
 Flutter Firebase boilerplate is a base setup that can be used for building all new flutter with firebase applications.
 
+### Setup
+
+Follow steps from this link https://firebase.google.com/docs/flutter/setup?platform=ios to setup firebase in your local
+
+2. Run following command to configure your firebase application
+   `flutterfire configure`
+
 ## Folder Structure
 
 - Components
